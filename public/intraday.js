@@ -148,7 +148,7 @@ function getUserHeartRateData(date) {
       return heartRateData.json();
     })
     .then(function(heartRateData) {
-      userHeartRateData = heartRateData["activities-heart-intraday"].dataset;
+      userHeartRateData[date] = heartRateData["activities-heart-intraday"].dataset;
 
       exportCSVFile(userHeartRateData);
 
